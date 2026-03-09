@@ -2,15 +2,14 @@
 
 namespace App\Services;
 
-use App\Controllers\BlogController;
-
 class Router
 {
-    public function handleRequest(array $get): void
+    public function handleRequest(array $get) : void
     {
-        $bc = new BlogController();
+        $bc = new \App\Controllers\BlogController();
 
-        if (!isset($get['route'])) {
+        if(!isset($get["route"]))
+        {
             $bc->home();
         }
     }
