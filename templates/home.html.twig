@@ -1,0 +1,33 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    <header>
+        <nav>
+            <ul>
+                {% for category in categories %}
+                    <li>
+                        <a href="">{{ category.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+{% endblock %}
+
+{% block main %}
+    <main>
+        <h1>Page d'accueil</h1>
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <h2>
+                        {{ post.title }}
+                    </h2>
+                    <p>
+                        {{ post.excerpt }}
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+{% endblock %}
