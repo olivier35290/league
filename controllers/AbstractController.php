@@ -1,26 +1,28 @@
 <?php
-/**
- * @author : Gaellan
- * @link : https://github.com/Gaellan
- */
 
+namespace App\Controllers;
+
+use Twig\Environment;
+use Twig\Extension\DebugExtension;
+use Twig\Loader\FilesystemLoader;
 
 abstract class AbstractController
 {
-    private \Twig\Environment $twig;
+    private Environment $twig;
+
     public function __construct()
     {
-        $loader = new \Twig\Loader\FilesystemLoader('templates');
-        $twig = new \Twig\Environment($loader,[
+        $loader = new FilesystemLoader('templates');
+        $twig = new Environment($loader, [
             'debug' => true,
         ]);
 
-        $twig->addExtension(new \Twig\Extension\DebugExtension());
+        $twig->addExtension(new DebugExtension());
 
         $this->twig = $twig;
     }
 
-    protected function render(string $template, array $data) : void
+    protected function render(string $template, array $data): void
     {
         echo $this->twig->render($template, $data);
     }

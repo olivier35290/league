@@ -1,18 +1,17 @@
 <?php
-/**
- * @author : Gaellan
- * @link : https://github.com/Gaellan
- */
 
+
+namespace App\Services;
+
+use App\Controllers\BlogController;
 
 class Router
 {
-    public function handleRequest(array $get) : void
+    public function handleRequest(array $get): void
     {
         $bc = new BlogController();
 
-        if(!isset($get["route"]))
-        {
+        if (!isset($get["route"])) {
             $bc->home();
         }
     }
