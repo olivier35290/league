@@ -16,9 +16,9 @@ class BlogController extends AbstractController
         $posts = $pm->findAll();
         $categories = $cm->findAll();
 
-        $this->render("home.html.twig", [
-            "posts" => $posts,
-            "categories" => $categories,
+        $this->render('home.html.twig', [
+            'posts' => $posts,
+            'categories' => $categories,
         ]);
     }
 }

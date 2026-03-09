@@ -2,22 +2,18 @@
 
 namespace App\Controllers;
 
-use Twig\Environment;
-use Twig\Extension\DebugExtension;
-use Twig\Loader\FilesystemLoader;
-
 abstract class AbstractController
 {
-    private Environment $twig;
+    private \Twig\Environment $twig;
 
     public function __construct()
     {
-        $loader = new FilesystemLoader('templates');
-        $twig = new Environment($loader, [
+        $loader = new \Twig\Loader\FilesystemLoader('templates');
+        $twig = new \Twig\Environment($loader, [
             'debug' => true,
         ]);
 
-        $twig->addExtension(new DebugExtension());
+        $twig->addExtension(new \Twig\Extension\DebugExtension());
 
         $this->twig = $twig;
     }

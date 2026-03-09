@@ -14,8 +14,8 @@ class PostManager extends AbstractManager
         $posts = [];
 
         foreach ($result as $item) {
-            $post = new Post($item["title"], $item["excerpt"], $item["content"]);
-            $post->setId($item["id"]);
+            $post = new Post($item['title'], $item['excerpt'], $item['content']);
+            $post->setId($item['id']);
             $posts[] = $post;
         }
 

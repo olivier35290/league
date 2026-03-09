@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Services;
 
 use App\Controllers\BlogController;
@@ -11,7 +10,7 @@ class Router
     {
         $bc = new BlogController();
 
-        if (!isset($get["route"])) {
+        if (!isset($get['route'])) {
             $bc->home();
         }
     }

@@ -1,3 +1,4 @@
+<?php
 namespace App\Managers;
 
 use App\Models\Category;
@@ -13,8 +14,8 @@ class CategoryManager extends AbstractManager
         $categories = [];
 
         foreach ($result as $item) {
-            $category = new Category($item["title"], $item["description"]);
-            $category->setId($item["id"]);
+            $category = new Category($item['title'], $item['description']);
+            $category->setId($item['id']);
             $categories[] = $category;
         }
 
